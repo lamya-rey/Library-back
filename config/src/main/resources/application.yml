@@ -1,5 +1,6 @@
 server:
   port: 8600
+  forward-headers-strategy: native
 spring:
   application:
     name: config-app
@@ -7,10 +8,16 @@ spring:
     admin:
       client:
         url: http://localhost:8500
+        instance:
+          management-base-url=http: http://localhost:8600
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/lamya-rey/library-back-config
+          uri: https://github.com/lamya-rey/library-back/config
+          default-label: main
+          force-pull: true
+          skip-ssl-validation: true
+          timeout: 20
 
 management.endpoints.web.exposure.include: '*'

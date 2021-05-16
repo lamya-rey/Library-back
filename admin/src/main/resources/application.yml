@@ -3,3 +3,5 @@ server:
 spring:
   application:
     name: admin-app
+  profiles:
+    active: @profileActive@
