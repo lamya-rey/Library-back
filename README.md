@@ -26,7 +26,8 @@ docker-compose up -d
 
 #### Architecture du projet :
 
-le projet est réalisé en appliquant l'architecture des micro-service avec Cloud, exposent le fonctionnel de l’application au travers d’une API REST.
+le projet est réalisé en appliquant l'architecture des micro-service avec Cloud, exposent le fonctionnel de l’application au travers d’un Webflux pour remplacer l'API Servlet et créer des endpoints compatibles avec Reactor, afin d'utiliser le paradigme de programmation réactive
+
 Ce projet est divisé comme suit:
 * Module Admin 
 * Module Config
@@ -52,5 +53,11 @@ Pour chaque micro-service User, Book et Comment, vous pouvez récupérer tous le
 * Modifier: update
 
 * Supprimer:  deleteById
+
+*****
+
+## Réalisé par
+- [Lamya Rayess](https://github.com/lamya-rey)
+- [Ahlem Fahem](https://github.com/Ahlem-fahem)
 
 
