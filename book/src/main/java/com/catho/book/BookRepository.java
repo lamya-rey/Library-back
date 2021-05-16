@@ -1,16 +1,14 @@
 package com.catho.book;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import reactor.core.publisher.Mono;
 
-@RepositoryRestResource(path = "book")
-public interface BookRepository extends JpaRepository<Book, Long> {
 
-    <S extends Book> S save(S book);
+public interface BookRepository extends ReactiveCrudRepository<Book, Long> {
 
-    public Book findByTitle (String title);
+    public Mono<Book> findByTitle (String title);
 
-    public void  deleteById(Long id);
 
-    public void  deleteAll();
 }
