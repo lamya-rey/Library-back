@@ -1,0 +1,28 @@
+server.port: 9000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bookModule
+          uri: http://localhost:8700/
+          predicates:
+            - Path=/api/book/**
+        - id: commentModule
+          uri: http://localhost:8800/
+          predicates:
+            - Path=/api/comment/**
+        - id: userModule
+          uri: http://localhost:8900/
+          predicates:
+            - Path=/api/user/**
+
+
+  application:
+    name: gateway-app
+  boot:
+    admin:
+      client:
+        url: http://localhost:8500
+
+management.endpoints.web.exposure.include: health

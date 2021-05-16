@@ -1,0 +1,16 @@
+server:
+  port: 8600
+spring:
+  application:
+    name: config-app
+  boot:
+    admin:
+      client:
+        url: http://localhost:8500
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lamya-rey/library-back-config
+
+management.endpoints.web.exposure.include: '*'
