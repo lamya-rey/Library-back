@@ -5,3 +5,13 @@ spring:
     import: optional:configserver:http://localhost:8700
   profiles:
     active: local
+  r2dbc:
+    username: lamya
+    password: UserPass@123
+server:
+  forward-headers-strategy: native
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
